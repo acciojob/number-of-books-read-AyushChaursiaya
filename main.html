@@ -1,16 +1,47 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shortcut Function</title>
+  <script>
+    function shortcut() {
+      // Get input values
+      var s1 = document.getElementById('input1').value;
+      var s2 = document.getElementById('input2').value;
+
+      // Call the JavaScript function
+      var result = calculateShortcut(s1, s2);
+
+      // Display the result
+      document.getElementById('result').textContent = 'Result: ' + result;
+    }
+
+    function calculateShortcut(s1, s2) {
+      // Check if either of the input strings is empty
+      if (!s1 || !s2) {
+        return '';
+      }
+
+      // Get the initial letters of the input strings
+      var initialLetters = s1.charAt(0).toUpperCase() + s2.charAt(0).toLowerCase();
+
+      return initialLetters;
+    }
+  </script>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+  <h2>Shortcut Function</h2>
+  <form>
+    <label for="input1">Input 1:</label>
+    <input type="text" id="input1" placeholder="Enter string 1">
 
+    <label for="input2">Input 2:</label>
+    <input type="text" id="input2" placeholder="Enter string 2">
+
+    <button type="button" onclick="shortcut()">Get Shortcut</button>
+  </form>
+
+  <div id="result"></div>
 </body>
-
 </html>
